@@ -1,5 +1,5 @@
 //
-//  mdbMessageController.h
+//  mdbTest2ViewController.h
 //  mdb_weibo
 //
 //  Created by wanghaobo on 15/11/7.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "mdbTest1ViewController.h"
 
-@interface mdbMessageController : UITableViewController
+@interface mdbTest2ViewController : UIViewController
 
 @end

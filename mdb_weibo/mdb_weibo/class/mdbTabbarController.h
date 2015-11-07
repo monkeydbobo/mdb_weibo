@@ -1,5 +1,5 @@
 //
-//  mdbMessageController.h
+//  mdbTabbarController.h
 //  mdb_weibo
 //
 //  Created by wanghaobo on 15/11/7.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "mdbTest1ViewController.h"
+#import "mdb.pch"
 
-@interface mdbMessageController : UITableViewController
+@interface mdbTabbarController : UITabBarController
 
 @end
