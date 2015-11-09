@@ -7,22 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D409DD411BEA164400756C4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D409DD401BEA164400756C4E /* main.m */; };
-		D409DD441BEA164400756C4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D409DD431BEA164400756C4E /* AppDelegate.m */; };
 		D409DD4C1BEA164400756C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D409DD4B1BEA164400756C4E /* Assets.xcassets */; };
 		D409DD5A1BEA164500756C4E /* mdb_weiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D409DD591BEA164500756C4E /* mdb_weiboTests.m */; };
 		D409DD651BEA164500756C4E /* mdb_weiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D409DD641BEA164500756C4E /* mdb_weiboUITests.m */; };
-		D4C9BAA51BEE19A40022615A /* mdbHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C9BAA41BEE19A40022615A /* mdbHomeController.m */; };
-		D4C9BAA81BEE1A230022615A /* mdbMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C9BAA71BEE1A230022615A /* mdbMessageController.m */; };
-		D4C9BAAB1BEE1A3C0022615A /* mdbDiscoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C9BAAA1BEE1A3C0022615A /* mdbDiscoverController.m */; };
-		D4C9BAAE1BEE1A600022615A /* mdbProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C9BAAD1BEE1A600022615A /* mdbProfileViewController.m */; };
-		D4C9BAB11BEE224D0022615A /* mdbTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C9BAB01BEE224D0022615A /* mdbTabbarController.m */; };
-		D4C9BAB71BEE38960022615A /* mdbTest1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C9BAB51BEE38960022615A /* mdbTest1ViewController.m */; };
-		D4C9BAB81BEE38960022615A /* mdbTest1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C9BAB61BEE38960022615A /* mdbTest1ViewController.xib */; };
-		D4C9BABC1BEE3C670022615A /* mdbTest2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C9BABA1BEE3C670022615A /* mdbTest2ViewController.m */; };
-		D4C9BABD1BEE3C670022615A /* mdbTest2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C9BABB1BEE3C670022615A /* mdbTest2ViewController.xib */; };
+		D48762211BF0C6C600A61096 /* mdbDiscoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48761F21BF0C6C600A61096 /* mdbDiscoverController.m */; };
+		D48762221BF0C6C600A61096 /* mdbHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48761F81BF0C6C600A61096 /* mdbHomeController.m */; };
+		D48762231BF0C6C600A61096 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D48761FE1BF0C6C600A61096 /* UIView+Extension.m */; };
+		D48762241BF0C6C600A61096 /* mdbNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48762011BF0C6C600A61096 /* mdbNavigationController.m */; };
+		D48762251BF0C6C600A61096 /* mdbTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48762031BF0C6C600A61096 /* mdbTabbarController.m */; };
+		D48762261BF0C6C600A61096 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D48762071BF0C6C600A61096 /* AppDelegate.m */; };
+		D48762271BF0C6C600A61096 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D48762081BF0C6C600A61096 /* main.m */; };
+		D48762281BF0C6C600A61096 /* mdbMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D487620D1BF0C6C600A61096 /* mdbMessageController.m */; };
+		D48762291BF0C6C600A61096 /* mdbProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48762141BF0C6C600A61096 /* mdbProfileViewController.m */; };
+		D487622A1BF0C6C600A61096 /* mdbTest1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48762191BF0C6C600A61096 /* mdbTest1ViewController.m */; };
+		D487622B1BF0C6C600A61096 /* mdbTest1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D487621A1BF0C6C600A61096 /* mdbTest1ViewController.xib */; };
+		D487622C1BF0C6C600A61096 /* mdbTest2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D487621C1BF0C6C600A61096 /* mdbTest2ViewController.m */; };
+		D487622D1BF0C6C600A61096 /* mdbTest2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D487621D1BF0C6C600A61096 /* mdbTest2ViewController.xib */; };
+		D487622E1BF0C6C600A61096 /* mdbTest3TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D487621F1BF0C6C600A61096 /* mdbTest3TableViewController.m */; };
+		D487622F1BF0C6C600A61096 /* mdbTest3TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48762201BF0C6C600A61096 /* mdbTest3TableViewController.xib */; };
+		D48762381BF0EA5800A61096 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D48762371BF0EA5800A61096 /* UIBarButtonItem+Extension.m */; };
 		D4C9BABF1BEE3F750022615A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C9BABE1BEE3F750022615A /* Launch Screen.storyboard */; };
-		D4C9BAC21BEE48CC0022615A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C9BAC11BEE48CC0022615A /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +48,6 @@
 
 /* Begin PBXFileReference section */
 		D409DD3C1BEA164400756C4E /* mdb_weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdb_weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D409DD401BEA164400756C4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D409DD421BEA164400756C4E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D409DD431BEA164400756C4E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D409DD4B1BEA164400756C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D409DD501BEA164400756C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D409DD551BEA164500756C4E /* mdb_weiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mdb_weiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,26 +56,36 @@
 		D409DD601BEA164500756C4E /* mdb_weiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mdb_weiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D409DD641BEA164500756C4E /* mdb_weiboUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mdb_weiboUITests.m; sourceTree = "<group>"; };
 		D409DD661BEA164500756C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D48761F11BF0C6C600A61096 /* mdbDiscoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbDiscoverController.h; sourceTree = "<group>"; };
+		D48761F21BF0C6C600A61096 /* mdbDiscoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbDiscoverController.m; sourceTree = "<group>"; };
+		D48761F71BF0C6C600A61096 /* mdbHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbHomeController.h; sourceTree = "<group>"; };
+		D48761F81BF0C6C600A61096 /* mdbHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbHomeController.m; sourceTree = "<group>"; };
+		D48761FD1BF0C6C600A61096 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		D48761FE1BF0C6C600A61096 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		D48762001BF0C6C600A61096 /* mdbNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbNavigationController.h; sourceTree = "<group>"; };
+		D48762011BF0C6C600A61096 /* mdbNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbNavigationController.m; sourceTree = "<group>"; };
+		D48762021BF0C6C600A61096 /* mdbTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbTabbarController.h; sourceTree = "<group>"; };
+		D48762031BF0C6C600A61096 /* mdbTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbTabbarController.m; sourceTree = "<group>"; };
+		D48762061BF0C6C600A61096 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D48762071BF0C6C600A61096 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D48762081BF0C6C600A61096 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D487620C1BF0C6C600A61096 /* mdbMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbMessageController.h; sourceTree = "<group>"; };
+		D487620D1BF0C6C600A61096 /* mdbMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbMessageController.m; sourceTree = "<group>"; };
+		D48762131BF0C6C600A61096 /* mdbProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbProfileViewController.h; sourceTree = "<group>"; };
+		D48762141BF0C6C600A61096 /* mdbProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbProfileViewController.m; sourceTree = "<group>"; };
+		D48762181BF0C6C600A61096 /* mdbTest1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbTest1ViewController.h; sourceTree = "<group>"; };
+		D48762191BF0C6C600A61096 /* mdbTest1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbTest1ViewController.m; sourceTree = "<group>"; };
+		D487621A1BF0C6C600A61096 /* mdbTest1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mdbTest1ViewController.xib; sourceTree = "<group>"; };
+		D487621B1BF0C6C600A61096 /* mdbTest2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbTest2ViewController.h; sourceTree = "<group>"; };
+		D487621C1BF0C6C600A61096 /* mdbTest2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbTest2ViewController.m; sourceTree = "<group>"; };
+		D487621D1BF0C6C600A61096 /* mdbTest2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mdbTest2ViewController.xib; sourceTree = "<group>"; };
+		D487621E1BF0C6C600A61096 /* mdbTest3TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbTest3TableViewController.h; sourceTree = "<group>"; };
+		D487621F1BF0C6C600A61096 /* mdbTest3TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbTest3TableViewController.m; sourceTree = "<group>"; };
+		D48762201BF0C6C600A61096 /* mdbTest3TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mdbTest3TableViewController.xib; sourceTree = "<group>"; };
+		D48762361BF0EA5800A61096 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		D48762371BF0EA5800A61096 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		D4C9BAA21BEE02590022615A /* mdb.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mdb.pch; sourceTree = "<group>"; };
-		D4C9BAA31BEE19A40022615A /* mdbHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mdbHomeController.h; path = class/mdbHomeController.h; sourceTree = "<group>"; };
-		D4C9BAA41BEE19A40022615A /* mdbHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mdbHomeController.m; path = class/mdbHomeController.m; sourceTree = "<group>"; };
-		D4C9BAA61BEE1A230022615A /* mdbMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mdbMessageController.h; path = class/mdbMessageController.h; sourceTree = "<group>"; };
-		D4C9BAA71BEE1A230022615A /* mdbMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mdbMessageController.m; path = class/mdbMessageController.m; sourceTree = "<group>"; };
-		D4C9BAA91BEE1A3C0022615A /* mdbDiscoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mdbDiscoverController.h; path = class/mdbDiscoverController.h; sourceTree = "<group>"; };
-		D4C9BAAA1BEE1A3C0022615A /* mdbDiscoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mdbDiscoverController.m; path = class/mdbDiscoverController.m; sourceTree = "<group>"; };
-		D4C9BAAC1BEE1A600022615A /* mdbProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mdbProfileViewController.h; path = class/mdbProfileViewController.h; sourceTree = "<group>"; };
-		D4C9BAAD1BEE1A600022615A /* mdbProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mdbProfileViewController.m; path = class/mdbProfileViewController.m; sourceTree = "<group>"; };
-		D4C9BAAF1BEE224D0022615A /* mdbTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mdbTabbarController.h; path = class/mdbTabbarController.h; sourceTree = "<group>"; };
-		D4C9BAB01BEE224D0022615A /* mdbTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mdbTabbarController.m; path = class/mdbTabbarController.m; sourceTree = "<group>"; };
-		D4C9BAB41BEE38960022615A /* mdbTest1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mdbTest1ViewController.h; path = class/mdbTest1ViewController.h; sourceTree = "<group>"; };
-		D4C9BAB51BEE38960022615A /* mdbTest1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mdbTest1ViewController.m; path = class/mdbTest1ViewController.m; sourceTree = "<group>"; };
-		D4C9BAB61BEE38960022615A /* mdbTest1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = mdbTest1ViewController.xib; path = class/mdbTest1ViewController.xib; sourceTree = "<group>"; };
-		D4C9BAB91BEE3C670022615A /* mdbTest2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mdbTest2ViewController.h; path = class/mdbTest2ViewController.h; sourceTree = "<group>"; };
-		D4C9BABA1BEE3C670022615A /* mdbTest2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mdbTest2ViewController.m; path = class/mdbTest2ViewController.m; sourceTree = "<group>"; };
-		D4C9BABB1BEE3C670022615A /* mdbTest2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = mdbTest2ViewController.xib; path = class/mdbTest2ViewController.xib; sourceTree = "<group>"; };
 		D4C9BABE1BEE3F750022615A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		D4C9BAC01BEE48CC0022615A /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "class/UIView+Extension.h"; sourceTree = "<group>"; };
-		D4C9BAC11BEE48CC0022615A /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extension.m"; path = "class/UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,30 +171,236 @@
 			path = mdb_weiboUITests;
 			sourceTree = "<group>";
 		};
+		D48761EF1BF0C6C600A61096 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				D48761F01BF0C6C600A61096 /* Controller */,
+				D48761F31BF0C6C600A61096 /* Model */,
+				D48761F41BF0C6C600A61096 /* View */,
+			);
+			name = Discover;
+			path = class/Discover;
+			sourceTree = "<group>";
+		};
+		D48761F01BF0C6C600A61096 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D48761F11BF0C6C600A61096 /* mdbDiscoverController.h */,
+				D48761F21BF0C6C600A61096 /* mdbDiscoverController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D48761F31BF0C6C600A61096 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D48761F41BF0C6C600A61096 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D48761F51BF0C6C600A61096 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D48761F61BF0C6C600A61096 /* Controller */,
+				D48761F91BF0C6C600A61096 /* Model */,
+				D48761FA1BF0C6C600A61096 /* View */,
+			);
+			name = Home;
+			path = class/Home;
+			sourceTree = "<group>";
+		};
+		D48761F61BF0C6C600A61096 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D48761F71BF0C6C600A61096 /* mdbHomeController.h */,
+				D48761F81BF0C6C600A61096 /* mdbHomeController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D48761F91BF0C6C600A61096 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D48761FA1BF0C6C600A61096 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D48761FB1BF0C6C600A61096 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D48761FC1BF0C6C600A61096 /* Category */,
+				D48761FF1BF0C6C600A61096 /* Controller */,
+				D48762041BF0C6C600A61096 /* Model */,
+				D48762051BF0C6C600A61096 /* Other */,
+				D48762091BF0C6C600A61096 /* View */,
+			);
+			name = Main;
+			path = class/Main;
+			sourceTree = "<group>";
+		};
+		D48761FC1BF0C6C600A61096 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D48761FD1BF0C6C600A61096 /* UIView+Extension.h */,
+				D48761FE1BF0C6C600A61096 /* UIView+Extension.m */,
+				D48762361BF0EA5800A61096 /* UIBarButtonItem+Extension.h */,
+				D48762371BF0EA5800A61096 /* UIBarButtonItem+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		D48761FF1BF0C6C600A61096 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D48762001BF0C6C600A61096 /* mdbNavigationController.h */,
+				D48762011BF0C6C600A61096 /* mdbNavigationController.m */,
+				D48762021BF0C6C600A61096 /* mdbTabbarController.h */,
+				D48762031BF0C6C600A61096 /* mdbTabbarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D48762041BF0C6C600A61096 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D48762051BF0C6C600A61096 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D48762061BF0C6C600A61096 /* AppDelegate.h */,
+				D48762071BF0C6C600A61096 /* AppDelegate.m */,
+				D48762081BF0C6C600A61096 /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		D48762091BF0C6C600A61096 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D487620A1BF0C6C600A61096 /* MessageCenter */ = {
+			isa = PBXGroup;
+			children = (
+				D487620B1BF0C6C600A61096 /* Controller */,
+				D487620E1BF0C6C600A61096 /* Model */,
+				D487620F1BF0C6C600A61096 /* View */,
+			);
+			name = MessageCenter;
+			path = class/MessageCenter;
+			sourceTree = "<group>";
+		};
+		D487620B1BF0C6C600A61096 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D487620C1BF0C6C600A61096 /* mdbMessageController.h */,
+				D487620D1BF0C6C600A61096 /* mdbMessageController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D487620E1BF0C6C600A61096 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D487620F1BF0C6C600A61096 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D48762101BF0C6C600A61096 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Other;
+			path = class/Other;
+			sourceTree = "<group>";
+		};
+		D48762111BF0C6C600A61096 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D48762121BF0C6C600A61096 /* Controller */,
+				D48762151BF0C6C600A61096 /* Model */,
+				D48762161BF0C6C600A61096 /* View */,
+			);
+			name = Profile;
+			path = class/Profile;
+			sourceTree = "<group>";
+		};
+		D48762121BF0C6C600A61096 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D48762131BF0C6C600A61096 /* mdbProfileViewController.h */,
+				D48762141BF0C6C600A61096 /* mdbProfileViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D48762151BF0C6C600A61096 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D48762161BF0C6C600A61096 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D48762171BF0C6C600A61096 /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				D48762181BF0C6C600A61096 /* mdbTest1ViewController.h */,
+				D48762191BF0C6C600A61096 /* mdbTest1ViewController.m */,
+				D487621A1BF0C6C600A61096 /* mdbTest1ViewController.xib */,
+				D487621B1BF0C6C600A61096 /* mdbTest2ViewController.h */,
+				D487621C1BF0C6C600A61096 /* mdbTest2ViewController.m */,
+				D487621D1BF0C6C600A61096 /* mdbTest2ViewController.xib */,
+				D487621E1BF0C6C600A61096 /* mdbTest3TableViewController.h */,
+				D487621F1BF0C6C600A61096 /* mdbTest3TableViewController.m */,
+				D48762201BF0C6C600A61096 /* mdbTest3TableViewController.xib */,
+			);
+			name = Temp;
+			path = class/Temp;
+			sourceTree = "<group>";
+		};
 		D4C9BAA11BEDFAA80022615A /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				D409DD421BEA164400756C4E /* AppDelegate.h */,
-				D409DD431BEA164400756C4E /* AppDelegate.m */,
-				D409DD401BEA164400756C4E /* main.m */,
-				D4C9BAA31BEE19A40022615A /* mdbHomeController.h */,
-				D4C9BAA41BEE19A40022615A /* mdbHomeController.m */,
-				D4C9BAA61BEE1A230022615A /* mdbMessageController.h */,
-				D4C9BAA71BEE1A230022615A /* mdbMessageController.m */,
-				D4C9BAA91BEE1A3C0022615A /* mdbDiscoverController.h */,
-				D4C9BAAA1BEE1A3C0022615A /* mdbDiscoverController.m */,
-				D4C9BAAC1BEE1A600022615A /* mdbProfileViewController.h */,
-				D4C9BAAD1BEE1A600022615A /* mdbProfileViewController.m */,
-				D4C9BAAF1BEE224D0022615A /* mdbTabbarController.h */,
-				D4C9BAB01BEE224D0022615A /* mdbTabbarController.m */,
-				D4C9BAB41BEE38960022615A /* mdbTest1ViewController.h */,
-				D4C9BAB51BEE38960022615A /* mdbTest1ViewController.m */,
-				D4C9BAB61BEE38960022615A /* mdbTest1ViewController.xib */,
-				D4C9BAB91BEE3C670022615A /* mdbTest2ViewController.h */,
-				D4C9BABA1BEE3C670022615A /* mdbTest2ViewController.m */,
-				D4C9BABB1BEE3C670022615A /* mdbTest2ViewController.xib */,
-				D4C9BAC01BEE48CC0022615A /* UIView+Extension.h */,
-				D4C9BAC11BEE48CC0022615A /* UIView+Extension.m */,
+				D48761EF1BF0C6C600A61096 /* Discover */,
+				D48761F51BF0C6C600A61096 /* Home */,
+				D48761FB1BF0C6C600A61096 /* Main */,
+				D487620A1BF0C6C600A61096 /* MessageCenter */,
+				D48762101BF0C6C600A61096 /* Other */,
+				D48762111BF0C6C600A61096 /* Profile */,
+				D48762171BF0C6C600A61096 /* Temp */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -294,10 +511,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4C9BAB81BEE38960022615A /* mdbTest1ViewController.xib in Resources */,
-				D4C9BABD1BEE3C670022615A /* mdbTest2ViewController.xib in Resources */,
+				D487622F1BF0C6C600A61096 /* mdbTest3TableViewController.xib in Resources */,
+				D487622B1BF0C6C600A61096 /* mdbTest1ViewController.xib in Resources */,
 				D4C9BABF1BEE3F750022615A /* Launch Screen.storyboard in Resources */,
 				D409DD4C1BEA164400756C4E /* Assets.xcassets in Resources */,
+				D487622D1BF0C6C600A61096 /* mdbTest2ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,16 +540,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4C9BAC21BEE48CC0022615A /* UIView+Extension.m in Sources */,
-				D4C9BAA51BEE19A40022615A /* mdbHomeController.m in Sources */,
-				D4C9BAAB1BEE1A3C0022615A /* mdbDiscoverController.m in Sources */,
-				D4C9BAB11BEE224D0022615A /* mdbTabbarController.m in Sources */,
-				D4C9BAA81BEE1A230022615A /* mdbMessageController.m in Sources */,
-				D409DD441BEA164400756C4E /* AppDelegate.m in Sources */,
-				D4C9BAAE1BEE1A600022615A /* mdbProfileViewController.m in Sources */,
-				D4C9BABC1BEE3C670022615A /* mdbTest2ViewController.m in Sources */,
-				D4C9BAB71BEE38960022615A /* mdbTest1ViewController.m in Sources */,
-				D409DD411BEA164400756C4E /* main.m in Sources */,
+				D48762231BF0C6C600A61096 /* UIView+Extension.m in Sources */,
+				D48762291BF0C6C600A61096 /* mdbProfileViewController.m in Sources */,
+				D487622A1BF0C6C600A61096 /* mdbTest1ViewController.m in Sources */,
+				D48762221BF0C6C600A61096 /* mdbHomeController.m in Sources */,
+				D48762261BF0C6C600A61096 /* AppDelegate.m in Sources */,
+				D48762251BF0C6C600A61096 /* mdbTabbarController.m in Sources */,
+				D48762211BF0C6C600A61096 /* mdbDiscoverController.m in Sources */,
+				D48762281BF0C6C600A61096 /* mdbMessageController.m in Sources */,
+				D48762381BF0EA5800A61096 /* UIBarButtonItem+Extension.m in Sources */,
+				D48762271BF0C6C600A61096 /* main.m in Sources */,
+				D487622E1BF0C6C600A61096 /* mdbTest3TableViewController.m in Sources */,
+				D487622C1BF0C6C600A61096 /* mdbTest2ViewController.m in Sources */,
+				D48762241BF0C6C600A61096 /* mdbNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +673,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/wanghaobo/mdb_weibo/mdb_weibo/mdb_weibo/mdb.pch;
 				INFOPLIST_FILE = mdb_weibo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "monkeydbobo.mdb-weibo";
@@ -465,6 +688,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/wanghaobo/mdb_weibo/mdb_weibo/mdb_weibo/mdb.pch;
 				INFOPLIST_FILE = mdb_weibo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "monkeydbobo.mdb-weibo";

@@ -1,22 +1,24 @@
 //
-//  mdbProfileViewController.m
+//  mdbTest3TableViewController.m
 //  mdb_weibo
 //
-//  Created by wanghaobo on 15/11/7.
+//  Created by wanghaobo on 15/11/9.
 //  Copyright © 2015年 wanghaobo. All rights reserved.
 //
 
-#import "mdbProfileViewController.h"
+#import "mdbTest3TableViewController.h"
+#import "mdbNavigationController.h"
 
-@interface mdbProfileViewController ()
+@interface mdbTest3TableViewController ()
 
 @end
 
-@implementation mdbProfileViewController
+@implementation mdbTest3TableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.rightBarButtonItem = nil;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -82,6 +84,22 @@
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
+}
+*/
+
+/*
+#pragma mark - Table view delegate
+
+// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Navigation logic may go here, for example:
+    // Create the next view controller.
+    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
+    
+    // Pass the selected object to the new view controller.
+    
+    // Push the view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 */
 

@@ -53,14 +53,18 @@
     
     return cell;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+ - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     mdbTest1ViewController *test1 = [[mdbTest1ViewController alloc]init];
     test1.title = @"测试控制器1";
     //test1控制器被push的时候，tabbar会自动隐藏
     //test1控制器被pop的时候，tabbar会自动现实 
     test1.hidesBottomBarWhenPushed = YES;
+     NSLog(@"%@",self.navigationController);
     [self.navigationController pushViewController:test1 animated:YES];
+    //选择tabbarController所在的控制器的NavigationController
+
     
 }
 

@@ -11,6 +11,7 @@
 #import "mdbDiscoverController.h"
 #import "mdbMessageController.h"
 #import "mdbProfileViewController.h"
+#import "mdbNavigationController.h"
 
 @interface mdbTabbarController ()
 
@@ -59,7 +60,7 @@
     //设置tabbar背景颜色
     childVc.view.backgroundColor = mdb_RandomColor;
     //给childVc控制器包装navigation控制器
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:childVc];
+    mdbNavigationController *nav = [[mdbNavigationController alloc]initWithRootViewController:childVc];
     
     //添加子控制器
     [self addChildViewController:nav];

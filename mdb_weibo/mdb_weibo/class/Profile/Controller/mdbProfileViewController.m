@@ -1,29 +1,32 @@
 //
-//  mdbHomeController.m
+//  mdbProfileViewController.m
 //  mdb_weibo
 //
 //  Created by wanghaobo on 15/11/7.
 //  Copyright © 2015年 wanghaobo. All rights reserved.
 //
 
-#import "mdbHomeController.h"
+#import "mdbProfileViewController.h"
+#import "mdbTest1ViewController.h"
 
-@interface mdbHomeController ()
+@interface mdbProfileViewController ()
 
 @end
 
-@implementation mdbHomeController
+@implementation mdbProfileViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self andAction:@selector(setting) andImage:@"navigationbar_pop" andHighImage:@"navigationbar_pop_highlighted"];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+- (void)setting{
+    
+    mdbTest1ViewController *test1 = [[mdbTest1ViewController alloc]init];
+    test1.title = @"test1";
+    [self.navigationController pushViewController:test1 animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
