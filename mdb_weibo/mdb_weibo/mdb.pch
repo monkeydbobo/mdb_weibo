@@ -11,6 +11,13 @@
 
 #endif /* PrefixHeader_pch */
 
+#ifndef DEBUG //开发阶段
+#define MDBLog(...) NSLog(_VA_ARGS__)
+#else //发布阶段
+#define MDBLog(...)
+#endif
+
+
 #ifdef __OBJC__
 
     #import "UIView+Extension.h"

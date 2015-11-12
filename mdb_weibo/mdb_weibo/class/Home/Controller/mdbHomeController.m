@@ -18,9 +18,52 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    //左右按键
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self andAction:@selector(friendSearch) andImage:@"navigationbar_friendsearch" andHighImage:@"navigationbar_friendsearch_highlighted"];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self andAction:@selector(pop) andImage:@"navigationbar_pop" andHighImage:@"navigationbar_pop_highlighted"];
+    
+    
+    //中间的标题按钮
+    UIButton *btn = [[UIButton alloc]init];
+    btn.width = 150;
+    btn.height = 30;
+
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont boldSystemFontOfSize:17];//设置粗体
+    [btn setTitle:@"首页" forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    btn.imageEdgeInsets = UIEdgeInsetsMake(0, 70, 0, 0);
+    btn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 50);
+    
+    //监听标题点击
+    [btn addTarget:self  action:@selector(titleClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    self.navigationItem.titleView = btn;
+}
+- (void)titleClick{
+    
+    //为了保证下拉菜单的窗口在最上面
+    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    
+    //添加蒙版
+    UIView *cover = [[UIView alloc]init];
+    //cover.backgroundColor = [UIColor clearColor];
+    cover.frame = window.bounds;
+    [window addSubview:cover];
+    
+    //添加带箭头的图片
+    UIImageView *dropdownMenu = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"popover_background"]];
+    //如果图片的某个方向上不规则，比如有突起或者凹进去的，则这个方向就不能拉伸
+    dropdownMenu.width = 217;
+    dropdownMenu.height = 217;
+    dropdownMenu.y = 150;
+    //UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    
+    [window addSubview:dropdownMenu];
+    
+    //相当于 self.view.window == [UIApplication sharedApplication].keyWindow;
 }
 
 - (void)friendSearch{

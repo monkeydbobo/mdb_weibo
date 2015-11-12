@@ -14,6 +14,26 @@
 
 @implementation mdbNavigationController
 
++ (void)initialize{
+    
+    //设置整个项目所在的item样式
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    
+    //设置普通状态
+    //key:NSForegro...AttributeName;
+    NSMutableDictionary *textAttr = [NSMutableDictionary dictionary];
+    textAttr[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    textAttr[NSFontAttributeName] = [UIFont systemFontOfSize:13];
+    [item setTitleTextAttributes:textAttr forState:UIControlStateNormal];
+    
+    //设置不可用状态
+    NSMutableDictionary *disableTextAttr = [NSMutableDictionary dictionary];
+    disableTextAttr[NSForegroundColorAttributeName] = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:0.5];
+    disableTextAttr[NSFontAttributeName] = [UIFont systemFontOfSize:13];
+    [item setTitleTextAttributes:disableTextAttr forState:UIControlStateDisabled];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

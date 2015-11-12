@@ -58,7 +58,7 @@
     [childVc.tabBarItem setTitleTextAttributes:selectTextArrs forState:UIControlStateSelected];
     
     //设置tabbar背景颜色
-    childVc.view.backgroundColor = mdb_RandomColor;
+    //childVc.view.backgroundColor = mdb_RandomColor;
     //给childVc控制器包装navigation控制器
     mdbNavigationController *nav = [[mdbNavigationController alloc]initWithRootViewController:childVc];
     

@@ -7,6 +7,7 @@
 //
 
 #import "mdbDiscoverController.h"
+#import "mdbSearchBar.h"
 
 @interface mdbDiscoverController ()
 
@@ -16,14 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    mdbSearchBar *searchBar = [mdbSearchBar searchBar];
+    searchBar.width = 300;
+    searchBar.height =30;
+    self.navigationItem.titleView = searchBar;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+ 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

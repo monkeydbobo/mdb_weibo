@@ -8,6 +8,7 @@
 
 #import "mdbProfileViewController.h"
 #import "mdbTest1ViewController.h"
+#import "mdbSearchBar.h"
 
 @interface mdbProfileViewController ()
 
@@ -15,10 +16,16 @@
 
 @implementation mdbProfileViewController
 
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self andAction:@selector(setting) andImage:@"navigationbar_pop" andHighImage:@"navigationbar_pop_highlighted"];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(setting)];
+    mdbSearchBar *searchBar = [mdbSearchBar searchBar];
+    searchBar.width = 300;
+    searchBar.height = 30;
+    [self.view addSubview:searchBar];
+    MDBLog("Profile...");
     
 }
 - (void)setting{
