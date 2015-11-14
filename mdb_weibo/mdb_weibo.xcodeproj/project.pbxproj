@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D409DD4C1BEA164400756C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D409DD4B1BEA164400756C4E /* Assets.xcassets */; };
 		D409DD5A1BEA164500756C4E /* mdb_weiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D409DD591BEA164500756C4E /* mdb_weiboTests.m */; };
 		D409DD651BEA164500756C4E /* mdb_weiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D409DD641BEA164500756C4E /* mdb_weiboUITests.m */; };
 		D41BD8491BF4D18B006A38D5 /* mdbSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BD8481BF4D18B006A38D5 /* mdbSearchBar.m */; };
+		D43473381BF62D84004C8186 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D43473371BF62D84004C8186 /* Images.xcassets */; };
+		D459B0A11BF5E53A00F97CDC /* mdbDropMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D459B0A01BF5E53A00F97CDC /* mdbDropMenu.m */; };
 		D48762211BF0C6C600A61096 /* mdbDiscoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48761F21BF0C6C600A61096 /* mdbDiscoverController.m */; };
 		D48762221BF0C6C600A61096 /* mdbHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48761F81BF0C6C600A61096 /* mdbHomeController.m */; };
 		D48762231BF0C6C600A61096 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D48761FE1BF0C6C600A61096 /* UIView+Extension.m */; };
@@ -49,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		D409DD3C1BEA164400756C4E /* mdb_weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdb_weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D409DD4B1BEA164400756C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D409DD501BEA164400756C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D409DD551BEA164500756C4E /* mdb_weiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mdb_weiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D409DD591BEA164500756C4E /* mdb_weiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mdb_weiboTests.m; sourceTree = "<group>"; };
@@ -59,6 +59,9 @@
 		D409DD661BEA164500756C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D41BD8471BF4D18B006A38D5 /* mdbSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbSearchBar.h; sourceTree = "<group>"; };
 		D41BD8481BF4D18B006A38D5 /* mdbSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbSearchBar.m; sourceTree = "<group>"; };
+		D43473371BF62D84004C8186 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = class/Temp/Images.xcassets; sourceTree = "<group>"; };
+		D459B09F1BF5E53A00F97CDC /* mdbDropMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbDropMenu.h; sourceTree = "<group>"; };
+		D459B0A01BF5E53A00F97CDC /* mdbDropMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbDropMenu.m; sourceTree = "<group>"; };
 		D48761F11BF0C6C600A61096 /* mdbDiscoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbDiscoverController.h; sourceTree = "<group>"; };
 		D48761F21BF0C6C600A61096 /* mdbDiscoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbDiscoverController.m; sourceTree = "<group>"; };
 		D48761F71BF0C6C600A61096 /* mdbHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbHomeController.h; sourceTree = "<group>"; };
@@ -148,7 +151,7 @@
 		D409DD3F1BEA164400756C4E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D409DD4B1BEA164400756C4E /* Assets.xcassets */,
+				D43473371BF62D84004C8186 /* Images.xcassets */,
 				D409DD501BEA164400756C4E /* Info.plist */,
 				D4C9BAA21BEE02590022615A /* mdb.pch */,
 				D4C9BABE1BEE3F750022615A /* Launch Screen.storyboard */,
@@ -299,6 +302,8 @@
 			children = (
 				D41BD8471BF4D18B006A38D5 /* mdbSearchBar.h */,
 				D41BD8481BF4D18B006A38D5 /* mdbSearchBar.m */,
+				D459B09F1BF5E53A00F97CDC /* mdbDropMenu.h */,
+				D459B0A01BF5E53A00F97CDC /* mdbDropMenu.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -517,9 +522,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D487622F1BF0C6C600A61096 /* mdbTest3TableViewController.xib in Resources */,
+				D43473381BF62D84004C8186 /* Images.xcassets in Resources */,
 				D487622B1BF0C6C600A61096 /* mdbTest1ViewController.xib in Resources */,
 				D4C9BABF1BEE3F750022615A /* Launch Screen.storyboard in Resources */,
-				D409DD4C1BEA164400756C4E /* Assets.xcassets in Resources */,
 				D487622D1BF0C6C600A61096 /* mdbTest2ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,6 +551,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D48762231BF0C6C600A61096 /* UIView+Extension.m in Sources */,
+				D459B0A11BF5E53A00F97CDC /* mdbDropMenu.m in Sources */,
 				D48762291BF0C6C600A61096 /* mdbProfileViewController.m in Sources */,
 				D487622A1BF0C6C600A61096 /* mdbTest1ViewController.m in Sources */,
 				D48762221BF0C6C600A61096 /* mdbHomeController.m in Sources */,

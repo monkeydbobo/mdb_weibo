@@ -7,7 +7,7 @@
 //
 
 #import "mdbHomeController.h"
-#import "mdb.pch"
+#import "mdbDropMenu.h"
 
 @interface mdbHomeController ()
 
@@ -44,26 +44,10 @@
 }
 - (void)titleClick{
     
-    //为了保证下拉菜单的窗口在最上面
-    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    mdbDropMenu *dropMenu = [mdbDropMenu menu];
+    [dropMenu setContentView:[UIButton buttonWithType:UIButtonTypeContactAdd]];
+    [dropMenu show];
     
-    //添加蒙版
-    UIView *cover = [[UIView alloc]init];
-    //cover.backgroundColor = [UIColor clearColor];
-    cover.frame = window.bounds;
-    [window addSubview:cover];
-    
-    //添加带箭头的图片
-    UIImageView *dropdownMenu = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"popover_background"]];
-    //如果图片的某个方向上不规则，比如有突起或者凹进去的，则这个方向就不能拉伸
-    dropdownMenu.width = 217;
-    dropdownMenu.height = 217;
-    dropdownMenu.y = 150;
-    //UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
-    
-    [window addSubview:dropdownMenu];
-    
-    //相当于 self.view.window == [UIApplication sharedApplication].keyWindow;
 }
 
 - (void)friendSearch{
