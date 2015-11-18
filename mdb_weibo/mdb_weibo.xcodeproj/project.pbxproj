@@ -28,6 +28,8 @@
 		D487622E1BF0C6C600A61096 /* mdbTest3TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D487621F1BF0C6C600A61096 /* mdbTest3TableViewController.m */; };
 		D487622F1BF0C6C600A61096 /* mdbTest3TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48762201BF0C6C600A61096 /* mdbTest3TableViewController.xib */; };
 		D48762381BF0EA5800A61096 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D48762371BF0EA5800A61096 /* UIBarButtonItem+Extension.m */; };
+		D4C0D9A81BF9B05B001B6465 /* mdbTitleMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C0D9A71BF9B05B001B6465 /* mdbTitleMenuTableViewController.m */; };
+		D4C0D9D41BFCA7D6001B6465 /* mdbTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C0D9D31BFCA7D6001B6465 /* mdbTabBar.m */; };
 		D4C9BABF1BEE3F750022615A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C9BABE1BEE3F750022615A /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,10 @@
 		D48762201BF0C6C600A61096 /* mdbTest3TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mdbTest3TableViewController.xib; sourceTree = "<group>"; };
 		D48762361BF0EA5800A61096 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		D48762371BF0EA5800A61096 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		D4C0D9A61BF9B05B001B6465 /* mdbTitleMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbTitleMenuTableViewController.h; sourceTree = "<group>"; };
+		D4C0D9A71BF9B05B001B6465 /* mdbTitleMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbTitleMenuTableViewController.m; sourceTree = "<group>"; };
+		D4C0D9D21BFCA7D6001B6465 /* mdbTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbTabBar.h; sourceTree = "<group>"; };
+		D4C0D9D31BFCA7D6001B6465 /* mdbTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbTabBar.m; sourceTree = "<group>"; };
 		D4C9BAA21BEE02590022615A /* mdb.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mdb.pch; sourceTree = "<group>"; };
 		D4C9BABE1BEE3F750022615A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,6 +247,8 @@
 		D48761FA1BF0C6C600A61096 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D4C0D9A61BF9B05B001B6465 /* mdbTitleMenuTableViewController.h */,
+				D4C0D9A71BF9B05B001B6465 /* mdbTitleMenuTableViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +312,8 @@
 				D41BD8481BF4D18B006A38D5 /* mdbSearchBar.m */,
 				D459B09F1BF5E53A00F97CDC /* mdbDropMenu.h */,
 				D459B0A01BF5E53A00F97CDC /* mdbDropMenu.m */,
+				D4C0D9D21BFCA7D6001B6465 /* mdbTabBar.h */,
+				D4C0D9D31BFCA7D6001B6465 /* mdbTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -551,12 +561,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D48762231BF0C6C600A61096 /* UIView+Extension.m in Sources */,
+				D4C0D9D41BFCA7D6001B6465 /* mdbTabBar.m in Sources */,
 				D459B0A11BF5E53A00F97CDC /* mdbDropMenu.m in Sources */,
 				D48762291BF0C6C600A61096 /* mdbProfileViewController.m in Sources */,
 				D487622A1BF0C6C600A61096 /* mdbTest1ViewController.m in Sources */,
 				D48762221BF0C6C600A61096 /* mdbHomeController.m in Sources */,
 				D48762261BF0C6C600A61096 /* AppDelegate.m in Sources */,
 				D48762251BF0C6C600A61096 /* mdbTabbarController.m in Sources */,
+				D4C0D9A81BF9B05B001B6465 /* mdbTitleMenuTableViewController.m in Sources */,
 				D48762211BF0C6C600A61096 /* mdbDiscoverController.m in Sources */,
 				D48762281BF0C6C600A61096 /* mdbMessageController.m in Sources */,
 				D48762381BF0EA5800A61096 /* UIBarButtonItem+Extension.m in Sources */,

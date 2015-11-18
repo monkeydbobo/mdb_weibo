@@ -9,9 +9,10 @@
 #import "mdbProfileViewController.h"
 #import "mdbTest1ViewController.h"
 #import "mdbSearchBar.h"
+#import "mdbDropMenu.h"
 
 @interface mdbProfileViewController ()
-
+@property (nonatomic,strong) mdbSearchBar *searchBar;
 @end
 
 @implementation mdbProfileViewController
@@ -26,13 +27,17 @@
     searchBar.height = 30;
     [self.view addSubview:searchBar];
     MDBLog("Profile...");
-    
+    self.searchBar = searchBar;
 }
 - (void)setting{
     
-    mdbTest1ViewController *test1 = [[mdbTest1ViewController alloc]init];
-    test1.title = @"test1";
-    [self.navigationController pushViewController:test1 animated:YES];
+    mdbDropMenu *menu = [mdbDropMenu menu];
+    UIButton *btn = [[UIButton alloc]init];
+    btn.width = 100;
+    btn.height = 100;
+    btn.backgroundColor = [UIColor redColor];
+    menu.contentView = btn;
+    [menu showFrom:self.searchBar];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

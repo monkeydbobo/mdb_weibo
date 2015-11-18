@@ -12,10 +12,13 @@
 
 + (instancetype)menu;
 
-- (void)show;
+- (void)showFrom:(UIView *)from;
 
 - (void)dismiss;
 
 @property (nonatomic,strong) UIView *contentView;
+
+@property (nonatomic,strong) UIViewController *contentController;
+
 
 @end

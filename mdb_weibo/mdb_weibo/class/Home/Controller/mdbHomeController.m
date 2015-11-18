@@ -8,6 +8,7 @@
 
 #import "mdbHomeController.h"
 #import "mdbDropMenu.h"
+#import "mdbTitleMenuTableViewController.h"
 
 @interface mdbHomeController ()
 
@@ -37,16 +38,28 @@
     btn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 50);
     
     //监听标题点击
-    [btn addTarget:self  action:@selector(titleClick) forControlEvents:UIControlEventTouchUpInside];
-    
+    [btn addTarget:self  action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.titleView = btn;
+    
+    UIButton *mBtn = [[UIButton alloc]init];
+    mBtn.backgroundColor = [UIColor redColor];
+    mBtn.width = 100;
+    mBtn.x = 80;
+    mBtn.y = 30;
+    mBtn.height = 30;
+    [mBtn addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:mBtn];
 }
-- (void)titleClick{
+- (void)titleClick:(UIButton *)titleButton {
     
     mdbDropMenu *dropMenu = [mdbDropMenu menu];
-    [dropMenu setContentView:[UIButton buttonWithType:UIButtonTypeContactAdd]];
-    [dropMenu show];
+    mdbTitleMenuTableViewController *vc = [[mdbTitleMenuTableViewController alloc]init];
+    vc.view.height = 44*3;
+    vc.view.width = 250;
+    dropMenu.contentController = vc;
+    
+    [dropMenu showFrom:titleButton];
     
 }
 
