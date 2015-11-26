@@ -8,11 +8,7 @@
 
 #import "AppDelegate.h"
 #import "mdbTabbarController.h"
-#import "mdbHomeController.h"
-#import "mdbDiscoverController.h"
-#import "mdbMessageController.h"
-#import "mdbProfileViewController.h"
-#import "mdb.pch"
+#import "NewFeatureViewController.h"
 
 @interface AppDelegate ()
 
@@ -28,9 +24,12 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     
     //设置根控制器
-    self.window.rootViewController = [[mdbTabbarController alloc]init];
+//    self.window.rootViewController = [[mdbTabbarController alloc]init];
     
-    //现实跟控制器
+    self.window.rootViewController = [[NewFeatureViewController alloc]init];
+    
+    
+    //显示跟控制器
     [self.window makeKeyAndVisible];
     return YES;
     

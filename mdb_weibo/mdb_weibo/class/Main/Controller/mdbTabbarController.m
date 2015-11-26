@@ -12,8 +12,9 @@
 #import "mdbMessageController.h"
 #import "mdbProfileViewController.h"
 #import "mdbNavigationController.h"
+#import "mdbTabBar.h"
 
-@interface mdbTabbarController ()
+@interface mdbTabbarController () <mdbTabBarDelegate>
 
 @end
 
@@ -28,8 +29,6 @@
     mdbMessageController *message = [[mdbMessageController alloc]init];
     [self addChildVc:message andTitle:@"消息" andImage:@"tabbar_message_center" andSelected:@"tabbar_message_center_selected"];
     
-    UIViewController *vc = [[UIViewController alloc]init];
-    
     
     mdbDiscoverController *discover = [[mdbDiscoverController alloc]init];
     [self addChildVc:discover andTitle:@"搜索" andImage:@"tabbar_discover" andSelected:@"tabbar_discover_selected"];
@@ -37,17 +36,10 @@
     mdbProfileViewController *profile = [[mdbProfileViewController alloc]init];
     [self addChildVc:profile andTitle:@"我" andImage:@"tabbar_profile" andSelected:@"tabbar_profile_selected"];
     
-    UIButton *plusBtn = [[UIButton alloc]init];
+    [self setValue:[[mdbTabBar alloc]init] forKey:@"tabBar"];
     
-    [plusBtn setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button"] forState:UIControlStateNormal];
-    [plusBtn setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
-    [plusBtn setImage:[UIImage imageNamed:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];
-    [plusBtn setImage:[UIImage imageNamed:@"tabbar_compose_icon_add_highlighted"] forState:UIControlStateHighlighted];
-    plusBtn.size = plusBtn.currentBackgroundImage.size;
-    plusBtn.centerX = self.tabBar.width * 0.5;
-    plusBtn.centerY = self.tabBar.height *0.5;
-    [self.tabBar addSubview:plusBtn];
-    MDBLog(@"%@",self.tabBar.subviews);
+    mdbTabBar *tb = [[mdbTabBar alloc]init];
+    tb.delegate = self;
     
 }
 - (void)addChildVc:(UIViewController*)childVc andTitle:(NSString *)title andImage:(NSString *)image andSelected:(NSString *)selectedImage
@@ -81,5 +73,13 @@
     [self addChildViewController:nav];
 }
 
+- (void)tabBarClickPlusButton:(mdbTabBar *)tabbar
+{
+    mdbTest1ViewController *vc = [[mdbTest1ViewController alloc]init];
+    vc.view.backgroundColor = [UIColor redColor];
+    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
 @end

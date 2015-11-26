@@ -45,7 +45,10 @@
     CGRect newFrame = [from convertRect:from.bounds toView:window];
     self.containerView.centerX = CGRectGetMidX(newFrame);
     self.containerView.y = CGRectGetMaxY(newFrame);
-}
+    if ([self.delegate respondsToSelector:@selector(dropMenuDidShow:)]) {
+        [self.delegate dropMenuDidShow:self];
+    }
+} 
 
 +(instancetype)menu{
     
@@ -78,6 +81,10 @@
 - (void)dismiss{
     
     [self removeFromSuperview];
+    if ([self.delegate respondsToSelector:@selector(dropMenuDidDismiss:)]) {
+        [self.delegate dropMenuDidDismiss:self];
+    }
+    
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     

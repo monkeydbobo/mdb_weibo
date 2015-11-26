@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class mdbDropMenu;
+
+@protocol mdbDropMenuDelegate <NSObject>
+@optional
+- (void)dropMenuDidDismiss:(mdbDropMenu *)menu;
+- (void)dropMenuDidShow:(mdbDropMenu *)menu;
+
+@end
+
 @interface mdbDropMenu : UIView
 
+@property (nonatomic,weak) id<mdbDropMenuDelegate> delegate;
+ 
 + (instancetype)menu;
 
 - (void)showFrom:(UIView *)from;

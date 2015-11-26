@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface mdbTabBar : UITabBar
+@class mdbTabBar;
 
+@protocol mdbTabBarDelegate <UITabBarDelegate>
+
+@optional
+- (void)tabBarClickPlusButton:(mdbTabBar *)tabbar;
+
+@end
+
+@interface mdbTabBar : UITabBar
+@property (nonatomic,weak) id<mdbTabBarDelegate> delegate;
 @end

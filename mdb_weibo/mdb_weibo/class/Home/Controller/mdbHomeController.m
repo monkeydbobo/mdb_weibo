@@ -10,8 +10,8 @@
 #import "mdbDropMenu.h"
 #import "mdbTitleMenuTableViewController.h"
 
-@interface mdbHomeController ()
-
+@interface mdbHomeController () <mdbDropMenuDelegate>
+@property (nonatomic,strong) UIButton *titleBtn;
 @end
 
 @implementation mdbHomeController
@@ -34,6 +34,7 @@
     btn.titleLabel.font = [UIFont boldSystemFontOfSize:17];//设置粗体
     [btn setTitle:@"首页" forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
     btn.imageEdgeInsets = UIEdgeInsetsMake(0, 70, 0, 0);
     btn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 50);
     
@@ -41,19 +42,14 @@
     [btn addTarget:self  action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.titleView = btn;
+    self.titleBtn = btn;
     
-    UIButton *mBtn = [[UIButton alloc]init];
-    mBtn.backgroundColor = [UIColor redColor];
-    mBtn.width = 100;
-    mBtn.x = 80;
-    mBtn.y = 30;
-    mBtn.height = 30;
-    [mBtn addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:mBtn];
 }
 - (void)titleClick:(UIButton *)titleButton {
     
     mdbDropMenu *dropMenu = [mdbDropMenu menu];
+    
+    dropMenu.delegate = self;
     mdbTitleMenuTableViewController *vc = [[mdbTitleMenuTableViewController alloc]init];
     vc.view.height = 44*3;
     vc.view.width = 250;
@@ -72,7 +68,16 @@
     
     NSLog(@"pop...");
 }
-\
+
+- (void)dropMenuDidDismiss:(mdbDropMenu *)menu
+{
+    self.titleBtn.selected = NO;
+}
+- (void)dropMenuDidShow:(mdbDropMenu *)menu
+{
+    self.titleBtn.selected = YES;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
