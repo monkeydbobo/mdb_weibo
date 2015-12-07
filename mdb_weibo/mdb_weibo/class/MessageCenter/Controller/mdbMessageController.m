@@ -37,7 +37,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
+    
     //返回当前TableView有几个分区
     return 1;
 }
@@ -54,7 +54,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
         
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"test--message--%d",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"test--message--%ld",(long)indexPath.row];
     
     return cell;
 }

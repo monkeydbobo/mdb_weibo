@@ -36,10 +36,9 @@
     mdbProfileViewController *profile = [[mdbProfileViewController alloc]init];
     [self addChildVc:profile andTitle:@"我" andImage:@"tabbar_profile" andSelected:@"tabbar_profile_selected"];
     
-    [self setValue:[[mdbTabBar alloc]init] forKey:@"tabBar"];
-    
     mdbTabBar *tb = [[mdbTabBar alloc]init];
-    tb.delegate = self;
+    //tabbar是有代理的，不用设置
+    [self setValue:[[mdbTabBar alloc]init] forKey:@"tabBar"];
     
 }
 - (void)addChildVc:(UIViewController*)childVc andTitle:(NSString *)title andImage:(NSString *)image andSelected:(NSString *)selectedImage

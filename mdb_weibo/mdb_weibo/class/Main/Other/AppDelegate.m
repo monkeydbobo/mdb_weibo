@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "mdbTabbarController.h"
 #import "NewFeatureViewController.h"
+#import "oAuthViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,11 +24,33 @@
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds;
     
-    //设置根控制器
-//    self.window.rootViewController = [[mdbTabbarController alloc]init];
+    //沙盒路径
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDownloadsDirectory, NSUserDomainMask, YES)lastObject];
+    NSString *path = [doc stringByAppendingPathComponent:@"account.plist"];
+    NSDictionary *account = [NSDictionary dictionaryWithContentsOfFile:path];
     
-    self.window.rootViewController = [[NewFeatureViewController alloc]init];
-    
+    if (account) {
+        //上次使用的沙盒版本号
+        NSString *key = @"CFBundleVersion";
+        NSString *lastVesion = [[NSUserDefaults standardUserDefaults]objectForKey:key];
+        NSString *currentVesion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+        if ([currentVesion isEqualToString:lastVesion]) {
+            //版本号相同，这次和上次是同一个版本
+            self.window.rootViewController = [[mdbTabbarController alloc]init];
+            
+        }else
+        {
+            //新版本
+            self.window.rootViewController = [[NewFeatureViewController alloc]init];
+            
+            //将版本号存入沙盒
+            [[NSUserDefaults standardUserDefaults] setObject:currentVesion forKey:@"CFBundleVersion"];
+            [[NSUserDefaults standardUserDefaults ]synchronize];
+            
+        }
+    }else{
+        self.window.rootViewController = [[oAuthViewController alloc]init];
+    }
     
     //显示跟控制器
     [self.window makeKeyAndVisible];

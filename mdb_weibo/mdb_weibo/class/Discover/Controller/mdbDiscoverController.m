@@ -10,7 +10,7 @@
 #import "mdbSearchBar.h"
 
 @interface mdbDiscoverController ()
-
+@property (nonatomic,strong) mdbSearchBar *searchBar;
 @end
 
 @implementation mdbDiscoverController
@@ -21,9 +21,19 @@
     searchBar.width = 300;
     searchBar.height =30;
     self.navigationItem.titleView = searchBar;
+    [searchBar addTarget:self action:@selector(finishEdit) forControlEvents:UIControlEventEditingDidEndOnExit];
+    [searchBar addTarget:self action:@selector(backTrap) forControlEvents:UIControlEventTouchDown];
+    self.searchBar = searchBar;
     
 }
- 
+- (void)backTrap
+{
+    [self.searchBar resignFirstResponder];
+}
+- (void)finishEdit
+{
+    [self.searchBar resignFirstResponder];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
