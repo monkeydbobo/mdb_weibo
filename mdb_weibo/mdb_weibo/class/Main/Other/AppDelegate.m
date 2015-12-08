@@ -10,6 +10,8 @@
 #import "mdbTabbarController.h"
 #import "NewFeatureViewController.h"
 #import "oAuthViewController.h"
+#import "mdbAccount.h"
+#import "mdbAccountTools.h"
 
 @interface AppDelegate ()
 
@@ -24,36 +26,35 @@
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds;
     
-    //沙盒路径
-    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDownloadsDirectory, NSUserDomainMask, YES)lastObject];
-    NSString *path = [doc stringByAppendingPathComponent:@"account.plist"];
-    NSDictionary *account = [NSDictionary dictionaryWithContentsOfFile:path];
+    //显示跟控制器
+    [self.window makeKeyAndVisible];
     
-    if (account) {
+    mdbAccount *account =[mdbAccountTools account];
+    
+    if (account)//如果accout存在，已经登录成功过
+    {
         //上次使用的沙盒版本号
         NSString *key = @"CFBundleVersion";
         NSString *lastVesion = [[NSUserDefaults standardUserDefaults]objectForKey:key];
         NSString *currentVesion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
-        if ([currentVesion isEqualToString:lastVesion]) {
-            //版本号相同，这次和上次是同一个版本
+        if ([currentVesion isEqualToString:lastVesion])
+        {
             self.window.rootViewController = [[mdbTabbarController alloc]init];
-            
-        }else
+        }
+        else
         {
             //新版本
             self.window.rootViewController = [[NewFeatureViewController alloc]init];
-            
             //将版本号存入沙盒
             [[NSUserDefaults standardUserDefaults] setObject:currentVesion forKey:@"CFBundleVersion"];
             [[NSUserDefaults standardUserDefaults ]synchronize];
-            
         }
-    }else{
+    }
+    else
+    {
         self.window.rootViewController = [[oAuthViewController alloc]init];
     }
     
-    //显示跟控制器
-    [self.window makeKeyAndVisible];
     return YES;
     
     

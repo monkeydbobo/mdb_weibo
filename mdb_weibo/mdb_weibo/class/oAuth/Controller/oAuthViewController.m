@@ -5,9 +5,13 @@
 //  Created by wanghaobo on 15/11/30.
 //  Copyright © 2015年 wanghaobo. All rights reserved.
 //
-
+#import "mdbTabbarController.h"
+#import "NewFeatureViewController.h"
 #import "oAuthViewController.h"
 #import "AFNetworking.h"
+#import "mdbAccount.h"
+#import "mdbAccountTools.h"
+#import "MBProgressHUD+NJ.h"
 @interface oAuthViewController () <UIWebViewDelegate>
 
 @end
@@ -70,13 +74,45 @@
     params [@"redirect_uri"] =@"http://github.com/monkeydbobo";
     
     [manger POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject){
-        //将返回的账号数据返回沙盒
-        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDownloadsDirectory, NSUserDomainMask, YES)lastObject];
-        NSString *path = [doc stringByAppendingPathComponent:@"account.plist"];
+        [MBProgressHUD hideHUD];
+        
+        mdbAccount *account = [mdbAccount accountWithDict:responseObject];
+        //存储账号信息
+        [mdbAccountTools saveAccount:account];
+        
+        //切换窗口的根控制器
+        NSString *key = @"CFBundleVersion";
+        NSString *lastVesion = [[NSUserDefaults standardUserDefaults]objectForKey:key];
+        NSString *currentVesion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+        UIWindow *window = [[UIApplication sharedApplication]keyWindow];
+        if ([currentVesion isEqualToString:lastVesion])
+        {
+            window.rootViewController = [[mdbTabbarController alloc]init];
+        }
+        else
+        {
+            //新版本
+             window.rootViewController = [[NewFeatureViewController alloc]init];
+            //将版本号存入沙盒
+            [[NSUserDefaults standardUserDefaults] setObject:currentVesion forKey:@"CFBundleVersion"];
+            [[NSUserDefaults standardUserDefaults ]synchronize];
+        }
 
-        [responseObject writeToFile:path atomically:YES];
     }failure:^(AFHTTPRequestOperation *opreation,NSError *error){
+        [MBProgressHUD hideHUD];
         NSLog(@"请求失败--%@",error);
     }];
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [MBProgressHUD showMessage:@"正在加载... "];
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [MBProgressHUD hideHUD];
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [MBProgressHUD hideHUD];
 }
 @end
