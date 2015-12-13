@@ -7,6 +7,7 @@
 //
 
 #ifndef PrefixHeader_pch
+
 #define PrefixHeader_pch
 
 #endif /* PrefixHeader_pch */
@@ -22,7 +23,7 @@
 
     #import "UIView+Extension.h"
     #import "UIBarButtonItem+Extension.h"
-
+    #import "UIWindow+Extension.h"
     //RGB颜色
     #define RGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 

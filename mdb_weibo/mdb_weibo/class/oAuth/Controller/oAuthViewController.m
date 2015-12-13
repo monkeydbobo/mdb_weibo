@@ -81,23 +81,8 @@
         [mdbAccountTools saveAccount:account];
         
         //切换窗口的根控制器
-        NSString *key = @"CFBundleVersion";
-        NSString *lastVesion = [[NSUserDefaults standardUserDefaults]objectForKey:key];
-        NSString *currentVesion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
-        UIWindow *window = [[UIApplication sharedApplication]keyWindow];
-        if ([currentVesion isEqualToString:lastVesion])
-        {
-            window.rootViewController = [[mdbTabbarController alloc]init];
-        }
-        else
-        {
-            //新版本
-             window.rootViewController = [[NewFeatureViewController alloc]init];
-            //将版本号存入沙盒
-            [[NSUserDefaults standardUserDefaults] setObject:currentVesion forKey:@"CFBundleVersion"];
-            [[NSUserDefaults standardUserDefaults ]synchronize];
-        }
-
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        [window switchRootViewController];
     }failure:^(AFHTTPRequestOperation *opreation,NSError *error){
         [MBProgressHUD hideHUD];
         NSLog(@"请求失败--%@",error);

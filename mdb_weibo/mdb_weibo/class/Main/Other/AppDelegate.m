@@ -26,29 +26,14 @@
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds;
     
+    mdbAccount *account =[mdbAccountTools account];
+    
     //显示跟控制器
     [self.window makeKeyAndVisible];
     
-    mdbAccount *account =[mdbAccountTools account];
-    
     if (account)//如果accout存在，已经登录成功过
     {
-        //上次使用的沙盒版本号
-        NSString *key = @"CFBundleVersion";
-        NSString *lastVesion = [[NSUserDefaults standardUserDefaults]objectForKey:key];
-        NSString *currentVesion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
-        if ([currentVesion isEqualToString:lastVesion])
-        {
-            self.window.rootViewController = [[mdbTabbarController alloc]init];
-        }
-        else
-        {
-            //新版本
-            self.window.rootViewController = [[NewFeatureViewController alloc]init];
-            //将版本号存入沙盒
-            [[NSUserDefaults standardUserDefaults] setObject:currentVesion forKey:@"CFBundleVersion"];
-            [[NSUserDefaults standardUserDefaults ]synchronize];
-        }
+        [self.window switchRootViewController];
     }
     else
     {
@@ -56,8 +41,6 @@
     }
     
     return YES;
-    
-    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
