@@ -48,6 +48,7 @@
 		D4C28C941C0C427800F014EA /* oAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C28C931C0C427800F014EA /* oAuthViewController.m */; };
 		D4C9BABF1BEE3F750022615A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C9BABE1BEE3F750022615A /* Launch Screen.storyboard */; };
 		D4CF42B01C1D96D000DBAF26 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CF42AF1C1D96CF00DBAF26 /* UIWindow+Extension.m */; };
+		D4CF42BE1C1DB7B400DBAF26 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CF42BD1C1DB7B400DBAF26 /* Foundation+Log.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		D4C9BABE1BEE3F750022615A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D4CF42AE1C1D96CF00DBAF26 /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
 		D4CF42AF1C1D96CF00DBAF26 /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
+		D4CF42BD1C1DB7B400DBAF26 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +382,7 @@
 				D48762371BF0EA5800A61096 /* UIBarButtonItem+Extension.m */,
 				D4CF42AE1C1D96CF00DBAF26 /* UIWindow+Extension.h */,
 				D4CF42AF1C1D96CF00DBAF26 /* UIWindow+Extension.m */,
+				D4CF42BD1C1DB7B400DBAF26 /* Foundation+Log.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				D48762381BF0EA5800A61096 /* UIBarButtonItem+Extension.m in Sources */,
 				D4125C3C1C11896400820B89 /* AFNetworkReachabilityManager.m in Sources */,
 				D4967A4C1C16B2EF00164B34 /* MBProgressHUD+NJ.m in Sources */,
+				D4CF42BE1C1DB7B400DBAF26 /* Foundation+Log.m in Sources */,
 				D4125C401C11896400820B89 /* AFURLResponseSerialization.m in Sources */,
 				D4125C3F1C11896400820B89 /* AFURLRequestSerialization.m in Sources */,
 				D4967A411C15C6C400164B34 /* mdbAccount.m in Sources */,

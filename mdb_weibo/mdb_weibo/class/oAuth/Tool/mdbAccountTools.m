@@ -15,7 +15,7 @@
 + (void)saveAccount:(mdbAccount *)account
 {
     //获取账号存储的时间
-    account.created_time = [NSDate date];
+    
     [NSKeyedArchiver archiveRootObject:account toFile:mdbAccountPath];
 }
 + (mdbAccount *)account
