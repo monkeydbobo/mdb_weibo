@@ -12,7 +12,7 @@
 #import "AFNetworking.h"
 #import "mdbAccountTools.h"
 #import "MBProgressHUD+NJ.h"
-
+#import "mdbTitleButton.h"
 @interface mdbHomeController () <mdbDropMenuDelegate>
 @property (nonatomic,strong) UIButton *titleBtn;
 @end
@@ -23,11 +23,16 @@
     
     [super viewDidLoad];
     
+    //设置用户信息
+    [self setupUserInfo];
     //设置导航栏内容
     [self setupNav];
     
-    //设置用户信息
-    [self setupUserInfo];
+    //加载微博数据
+    [self loadNewStatus];
+    
+}
+- (void)loadStatus{
     
 }
 - (void)setupUserInfo
@@ -41,18 +46,11 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params [@"access_token"] = account.access_token;
     params [@"uid"] = account.uid;
-//    NSLog(@"access_token = %@",account.access_token);
-//    NSLog(@"uid = %@",account.uid);
     
     [mgr GET:url parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject){
         NSLog(@"请求成功--%@",responseObject);
-        //标题按钮
-        UIButton *titleButton = (UIButton *)self.navigationItem.titleView;
-        //设置名字
+        //存储名字到沙盒中
         NSString *name = responseObject[@"name"];
-        [titleButton setTitle:name forState:UIControlStateNormal];
-        
-        //存储到沙盒中
         account.name = name;
         [mdbAccountTools saveAccount:account];
     }failure:^(AFHTTPRequestOperation *opreation,NSError *error){
@@ -69,27 +67,14 @@
     
     
     //中间的标题按钮
-    UIButton *btn = [[UIButton alloc]init];
-    btn.width = 150;
-    btn.height = 30;
-    
-    //设置图片和文字
+    mdbTitleButton *titleButton = [[mdbTitleButton alloc]init];
     NSString *name = [mdbAccountTools account].name;
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    btn.titleLabel.font = [UIFont boldSystemFontOfSize:17];//设置粗体
-    
-    [btn setTitle:name?name:@"首页" forState:UIControlStateNormal];
-    [btn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
-    [btn setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
-    btn.imageEdgeInsets = UIEdgeInsetsMake(0, 80, 0, 0);
-    btn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 50);
-    
+    [titleButton setTitle:name?name:@"首页" forState:UIControlStateNormal];
     //监听标题点击
-    [btn addTarget:self  action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.navigationItem.titleView = btn;
-    self.titleBtn = btn;
-
+    [titleButton addTarget:self  action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.titleView =titleButton;
+    self.titleBtn = titleButton;
+   
 }
 - (void)titleClick:(UIButton *)titleButton {
     
@@ -132,12 +117,12 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
+
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
+
     return 0;
 }
 

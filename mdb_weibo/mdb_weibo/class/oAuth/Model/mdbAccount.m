@@ -24,6 +24,7 @@
     account.expires_in = dict[@"expires_in"];
     //获取账号的存储时间
     account.created_time = [NSDate date];
+    account.name = dict[@"name"];
     return account;
 }
 /*
@@ -51,7 +52,7 @@
         self.uid = [aDecoder decodeObjectForKey:@"uid"];
         self.expires_in = [aDecoder decodeObjectForKey:@"expires_in"];
         self.created_time = [aDecoder decodeObjectForKey:@"created_time"];
-        
+        self.name = [aDecoder decodeObjectForKey:@"name"];
     }
     return self;
 }

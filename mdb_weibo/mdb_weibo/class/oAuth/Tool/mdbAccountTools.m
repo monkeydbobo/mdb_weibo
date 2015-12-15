@@ -39,7 +39,7 @@
     if (result != NSOrderedDescending) {
         return nil;
     }
-    NSLog(@"exprise = %@  now = %@",expriseTime ,now);
+//    NSLog(@"exprise = %@  now = %@",expriseTime ,now);
     return account;
 }
 @end
