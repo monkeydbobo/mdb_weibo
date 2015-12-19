@@ -11,6 +11,7 @@
 @implementation mdbTitleButton
 - (instancetype)initWithFrame:(CGRect)frame
 {
+//    NSLog(@"%@",NSStringFromCGRect(frame));
     if (self = [super initWithFrame:frame]) {
         
         //设置内容居中
@@ -26,7 +27,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.titleLabel.x = 0;
+    self.titleLabel.x = self.imageView.x;
     self.imageView.x = CGRectGetMaxX(self.titleLabel.frame);
 }
 - (void)setTitle:(NSString *)title forState:(UIControlState)state

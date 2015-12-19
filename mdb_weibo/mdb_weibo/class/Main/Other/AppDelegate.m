@@ -7,11 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "mdbTabbarController.h"
-#import "NewFeatureViewController.h"
 #import "oAuthViewController.h"
-#import "mdbAccount.h"
 #import "mdbAccountTools.h"
+#import "SDWebImageManager.h"
 
 @interface AppDelegate ()
 
@@ -63,5 +61,14 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    //取消下载
+    SDWebImageManager *mgr = [SDWebImageManager sharedManager];
+    
+    [mgr cancelAll];
+    //清楚内存中的所有图片
+    [mgr.imageCache clearMemory];
 }
 @end

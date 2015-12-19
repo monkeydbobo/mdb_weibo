@@ -6,7 +6,6 @@
 //  Copyright © 2015年 wanghaobo. All rights reserved.
 //
 #import "mdbTabbarController.h"
-#import "NewFeatureViewController.h"
 #import "oAuthViewController.h"
 #import "AFNetworking.h"
 #import "mdbAccount.h"
