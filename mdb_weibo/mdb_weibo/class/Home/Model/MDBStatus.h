@@ -17,5 +17,5 @@ user	object	微博作者的用户信息字段 详细
 @property (nonatomic,copy) NSString *idstr;
 @property (nonatomic,copy) NSString *text;
 @property (nonatomic,strong) MDBUser *user;
-+(instancetype)statusWithDict:(NSDictionary *)dict;
+
 @end

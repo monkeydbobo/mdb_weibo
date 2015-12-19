@@ -10,12 +10,4 @@
 #import "MDBUser.h"
 
 @implementation MDBStatus
-+(instancetype)statusWithDict:(NSDictionary *)dict
-{
-    MDBStatus *status = [[MDBStatus alloc] init];
-    status.idstr = dict[@"idstr"];
-    status.text = dict[@"text"];
-    status.user = [MDBUser userWithDict:dict[@"user"]] ;
-    return status; 
-}
 @end

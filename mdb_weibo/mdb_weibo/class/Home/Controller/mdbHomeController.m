@@ -16,6 +16,8 @@
 #import "UIImageView+WebCache.h"
 #import "MDBUser.h"
 #import "MDBStatus.h"
+#import "MJExtension.h"
+#import "MDBLoadMoreFooter.h"
 
 @interface mdbHomeController () <mdbDropMenuDelegate>
 @property (nonatomic,strong) UIButton *titleBtn;
@@ -23,6 +25,8 @@
  *微博数组，每一个数组代表一条微博
  */
 @property (nonatomic,strong) NSMutableArray *statuses;
+
+//@property (nonatomic,strong) MDBLoadMoreFooter *footer;
 
 @end
 
@@ -40,12 +44,167 @@
     
     //设置用户信息
     [self setupUserInfo];
+    
     //设置导航栏内容
     [self setupNav];
     
-    //加载微博数据
-    [self loadNewStatus];
+    //集成下拉刷新控件
+    [self setupRefresh];
     
+    //集成上拉刷新控件
+    [self setupUpRefresh];
+}
+- (void)setupUpRefresh
+{
+    MDBLoadMoreFooter *footer = [MDBLoadMoreFooter footer];
+    footer.hidden = YES;
+    self.tableView.tableFooterView = footer;
+    
+}
+
+- (void)setupRefresh
+{
+    //1.添加刷新控件
+    UIRefreshControl *control = [[UIRefreshControl alloc] init];
+    //手动下拉刷新才会触发valueChange事件
+    [control addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:control];
+    
+    //2.马上进入刷新状态,仅仅是进入刷新界面，不会触发valuechange事件
+    [control beginRefreshing];
+    [self refreshStateChange:control];
+}
+- (void)loadMoreStatus
+{
+    NSString* url = @"https://api.weibo.com/2/statuses/friends_timeline.json";
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    mdbAccount *account = [mdbAccountTools account];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params [@"access_token"] = account.access_token;
+    
+    MDBStatus *lastStatus = [self.statuses lastObject];
+    if (lastStatus) {
+        long long maxId = lastStatus.idstr.longLongValue - 1;
+        params[@"max_id"] = @(maxId);
+    }
+    [mgr GET:url parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject){
+        //        NSLog(@"请求成功--%@",responseObject);
+        //将“微博字典”数组 转为 “微博模型”数组
+        NSArray *newStatues = [MDBStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        //把新的微博数据添加到数组的后面
+        [self.statuses addObjectsFromArray:newStatues];
+        //刷新表格
+        [self.tableView reloadData];
+        //结束刷新，隐藏foot
+        self.tableView.tableFooterView.hidden = YES;
+        
+    }failure:^(AFHTTPRequestOperation *opreation,NSError *error){
+        NSLog(@"请求失败--%@",error);
+        //隐藏foot
+        self.tableView.tableFooterView.hidden = YES;
+
+    }];
+
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //scrollView == self.tableView == self.view
+    if (self.statuses.count == 0 || self.tableView.tableFooterView.hidden == NO)
+        return;
+    
+    CGFloat offsetY = scrollView.contentOffset.y;
+    CGFloat judgeOffsetY = scrollView.contentSize.height + scrollView.contentInset.bottom - scrollView.height - self.tableView.tableFooterView.height;
+    if (offsetY >= judgeOffsetY) { // 最后一个cell完全进入视野范围内
+        // 显示footer
+        self.tableView.tableFooterView.hidden = NO;
+        
+        // 加载更多的微博数据
+        [self loadMoreStatus];
+    }
+}
+    
+- (void)refreshStateChange:(UIRefreshControl *)control
+{
+    NSLog(@"刷新！！！！");
+    NSString* url = @"https://api.weibo.com/2/statuses/friends_timeline.json";
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    mdbAccount *account = [mdbAccountTools account];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params [@"access_token"] = account.access_token;
+    MDBStatus *firstStaus = [self.statuses firstObject];
+    //若指定此参数，则返回ID比since_id大的微博
+    params [@"since_id"] = firstStaus.idstr;
+    if (firstStaus) {
+        params[@"since_id"] = firstStaus.idstr;
+    }
+    [mgr GET:url parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject){
+        //将“微博字典”数组 转为 “微博模型”数组
+        NSArray *newStatues = [MDBStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        
+        //将最新的微博数据，添加到总数组的最前面
+        NSRange range = NSMakeRange(0, newStatues.count);
+        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
+        [self.statuses insertObjects:newStatues atIndexes:set];
+        
+        //刷新表格
+        [self.tableView reloadData];
+        
+        //结束刷新
+        [control endRefreshing];
+        
+        //显示刷新的条数
+        [self showNewStatusCount:newStatues.count];
+    }failure:^(AFHTTPRequestOperation *opreation,NSError *error){
+        NSLog(@"请求失败--%@",error);
+        
+        [control endRefreshing];
+    }];
+}
+/*
+ *显示最新的微博数量
+ */
+- (void)showNewStatusCount:(int)count
+{
+    //1.创建Lable
+    UILabel *label = [[UILabel alloc] init];
+    label.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"timeline_new_status_background"]];
+    label.width = [UIScreen mainScreen].bounds.size.width;
+    label.height = 35;
+    
+    //2.设置其他属性
+    if (count == 0) {
+        label.text = @"没有新的微博数据";
+
+    }else{
+        label.text = [NSString stringWithFormat:@"共有%d条微博数据",count];
+    }
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:16];
+    
+    //3.添加到tableview
+    label.y = 64-label.height;
+    //将Label添加到导航控制器的view中，并且是盖在导航栏下面
+    [self.navigationController.view insertSubview:label belowSubview:self.navigationController.navigationBar];
+    
+    //4.添加动画（利用1S的时间往下移动自己高度的距离，然后延迟一秒向上移动，从父控件移除）
+    CGFloat duration = 1.0;//动画的时间
+    [UIView animateWithDuration:duration animations:^{
+        
+        label.transform = CGAffineTransformMakeTranslation(0, label.height);
+    }completion:^(BOOL finished){
+        CGFloat delay = 1.0;//延迟1s
+        //UIViewAnimationOptionCurveLinear 线性，匀速执行
+        [UIView animateWithDuration:duration delay:delay options:UIViewAnimationOptionCurveLinear animations:^{
+            
+            label.transform = CGAffineTransformIdentity;
+        }completion:^(BOOL finished){
+            [label removeFromSuperview];
+        }];
+    }];
 }
 - (void)loadNewStatus{
     
@@ -57,14 +216,13 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params [@"access_token"] = account.access_token;
     [mgr GET:url parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject){
-        NSLog(@"请求成功--%@",responseObject);
-        //取得微博字典数组
-        NSArray *dictArray = responseObject[@"statuses"];
+//        NSLog(@"请求成功--%@",responseObject);
         //将“微博字典”数组 转为 “微博模型”数组
-        for (NSDictionary *dict in dictArray) {
-            MDBStatus *status = [MDBStatus statusWithDict:dict];
-            [self.statuses addObject:status];
-        }
+        NSArray *newStatues = [MDBStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+
+        //将新的数据添加到数组的后面
+        [self.statuses addObjectsFromArray:newStatues];
+        
         //刷新表格
         [self.tableView reloadData];
     }failure:^(AFHTTPRequestOperation *opreation,NSError *error){
@@ -87,7 +245,7 @@
     [mgr GET:url parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject){
 //        NSLog(@"请求成功--%@",responseObject);
         //存储名字到沙盒中
-        MDBUser *user = [MDBUser userWithDict:responseObject];
+        MDBUser *user = [MDBUser objectWithKeyValues:responseObject];
         NSString *name = user.name;
         account.name = name;
         [mdbAccountTools saveAccount:account];
