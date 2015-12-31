@@ -7,7 +7,7 @@
 //
 
 #import "mdbTitleButton.h"
-
+#define MDBMargin 5
 @implementation mdbTitleButton
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -24,11 +24,17 @@
     }
     return self;
 }
+//在系统设置完按钮尺寸后，在修改一下尺寸
+- (void)setFrame:(CGRect)frame
+{
+    frame.size.width += MDBMargin;
+    [super setFrame:frame];
+}
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     self.titleLabel.x = self.imageView.x;
-    self.imageView.x = CGRectGetMaxX(self.titleLabel.frame);
+    self.imageView.x = CGRectGetMaxX(self.titleLabel.frame) +10;
 }
 - (void)setTitle:(NSString *)title forState:(UIControlState)state
 {

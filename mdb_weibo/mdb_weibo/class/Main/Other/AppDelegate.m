@@ -45,10 +45,27 @@
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
-
+/*
+ *app进入后台的时候调用的方法
+ */
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    /*
+     * app状态
+     * 1.死亡状态
+     * 2.前台运行状态
+     * 3.后台暂停状态:停止一切动画定时器和多媒体操作
+     * 4.后台运行状态
+     */
+    
+    // 向操作系统申请后台运行的资格，能维持多久是不确定的
+    UIBackgroundTaskIdentifier task = [application beginBackgroundTaskWithExpirationHandler:^{
+        //当申请的后台运行时间已经过期，就会调用这个block
+        
+        //结束这个任务
+        [application endBackgroundTask:task];
+    }];
+    //搞一个0kb的MP3文件循环播放 
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

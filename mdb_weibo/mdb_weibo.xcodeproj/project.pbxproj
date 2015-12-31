@@ -35,6 +35,8 @@
 		D41E4E611C2052D000739C7B /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D41E4E4F1C2052D000739C7B /* UIImageView+HighlightedWebCache.m */; };
 		D41E4E621C2052D000739C7B /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D41E4E511C2052D000739C7B /* UIImageView+WebCache.m */; };
 		D41E4E631C2052D000739C7B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D41E4E531C2052D000739C7B /* UIView+WebCacheOperation.m */; };
+		D429CCC51C33EADE0030B911 /* MDBStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D429CCC41C33EADE0030B911 /* MDBStatusCell.m */; };
+		D429CCC81C33FA6F0030B911 /* MDBStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = D429CCC71C33FA6F0030B911 /* MDBStatusFrame.m */; };
 		D433D4101C1EC55100045ACD /* mdbTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D433D40F1C1EC55100045ACD /* mdbTitleButton.m */; };
 		D43473381BF62D84004C8186 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D43473371BF62D84004C8186 /* Images.xcassets */; };
 		D44844D81C073344005558FA /* NewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D44844D71C073344005558FA /* NewFeatureViewController.m */; };
@@ -163,6 +165,10 @@
 		D41E4E511C2052D000739C7B /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		D41E4E521C2052D000739C7B /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		D41E4E531C2052D000739C7B /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		D429CCC31C33EADE0030B911 /* MDBStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBStatusCell.h; sourceTree = "<group>"; };
+		D429CCC41C33EADE0030B911 /* MDBStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBStatusCell.m; sourceTree = "<group>"; };
+		D429CCC61C33FA6F0030B911 /* MDBStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBStatusFrame.h; sourceTree = "<group>"; };
+		D429CCC71C33FA6F0030B911 /* MDBStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBStatusFrame.m; sourceTree = "<group>"; };
 		D433D40E1C1EC55100045ACD /* mdbTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbTitleButton.h; sourceTree = "<group>"; };
 		D433D40F1C1EC55100045ACD /* mdbTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbTitleButton.m; sourceTree = "<group>"; };
 		D43473371BF62D84004C8186 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = class/Temp/Images.xcassets; sourceTree = "<group>"; };
@@ -519,6 +525,8 @@
 				D4E493661C22A6520054C444 /* MDBUser.m */,
 				D4E493681C22A6860054C444 /* MDBStatus.h */,
 				D4E493691C22A6860054C444 /* MDBStatus.m */,
+				D429CCC61C33FA6F0030B911 /* MDBStatusFrame.h */,
+				D429CCC71C33FA6F0030B911 /* MDBStatusFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -533,6 +541,8 @@
 				D46373D01C259617008C6DC7 /* MDBLoadMoreFooter.h */,
 				D46373D11C259617008C6DC7 /* MDBLoadMoreFooter.m */,
 				D46373D31C259659008C6DC7 /* MDBLoadMoreFooter.xib */,
+				D429CCC31C33EADE0030B911 /* MDBStatusCell.h */,
+				D429CCC41C33EADE0030B911 /* MDBStatusCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -942,6 +952,7 @@
 				D48762381BF0EA5800A61096 /* UIBarButtonItem+Extension.m in Sources */,
 				D4125C3C1C11896400820B89 /* AFNetworkReachabilityManager.m in Sources */,
 				D46373CE1C2556C2008C6DC7 /* NSObject+MJProperty.m in Sources */,
+				D429CCC51C33EADE0030B911 /* MDBStatusCell.m in Sources */,
 				D4967A4C1C16B2EF00164B34 /* MBProgressHUD+NJ.m in Sources */,
 				D4CF42BE1C1DB7B400DBAF26 /* Foundation+Log.m in Sources */,
 				D41E4E621C2052D000739C7B /* UIImageView+WebCache.m in Sources */,
@@ -957,6 +968,7 @@
 				D48762271BF0C6C600A61096 /* main.m in Sources */,
 				D46373D21C259617008C6DC7 /* MDBLoadMoreFooter.m in Sources */,
 				D41E4E591C2052D000739C7B /* SDWebImageDownloader.m in Sources */,
+				D429CCC81C33FA6F0030B911 /* MDBStatusFrame.m in Sources */,
 				D487622E1BF0C6C600A61096 /* mdbTest3TableViewController.m in Sources */,
 				D41E4E5E1C2052D000739C7B /* UIImage+GIF.m in Sources */,
 				D41BD8491BF4D18B006A38D5 /* mdbSearchBar.m in Sources */,
