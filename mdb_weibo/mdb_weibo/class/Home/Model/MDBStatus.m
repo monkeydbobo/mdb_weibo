@@ -7,7 +7,14 @@
 //  微博模型
 
 #import "MDBStatus.h"
-#import "MDBUser.h"
+#import "MJExtension.h"
+#import "MDBPhoto.h"
 
 @implementation MDBStatus
++ (NSDictionary *)mj_objectClassInArray
+{
+    return @{
+             @"pic_urls" : [MDBPhoto class]
+    };
+}
 @end

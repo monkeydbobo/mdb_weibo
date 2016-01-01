@@ -191,13 +191,12 @@
     }
     [mgr GET:url parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject){
         //将“微博字典”数组 转为 “微博模型”数组
+        NSLog(@"%@",responseObject);
         NSArray *newStatues = [MDBStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
         // 将MDBStatus数组转为MDBStatusFrames数组
         NSArray *newFrames = [self statusFramesWithStatuses:newStatues];
         
-        NSLog(@"%@",newFrames);
-        
-        //将最新的微博数据，添加到总数组的最前面
+        //将最新的微博数据，添加到总数组的最前面 
         NSRange range = NSMakeRange(0, newFrames.count);
         
         NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
@@ -302,9 +301,9 @@
     mdbTitleButton *titleButton = [[mdbTitleButton alloc]init];
     titleButton.width = 150;
     titleButton.height = 30;
-    titleButton.backgroundColor = [UIColor redColor];
-    titleButton.titleLabel.backgroundColor = [UIColor blueColor];
-    titleButton.imageView.backgroundColor = [UIColor yellowColor];
+//    titleButton.backgroundColor = [UIColor redColor];
+//    titleButton.titleLabel.backgroundColor = [UIColor blueColor];
+//    titleButton.imageView.backgroundColor = [UIColor yellowColor];
 
     NSString *name = [mdbAccountTools account].name;
     [titleButton setTitle:name?name:@"首页" forState:UIControlStateNormal];

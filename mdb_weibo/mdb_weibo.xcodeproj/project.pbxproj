@@ -35,6 +35,7 @@
 		D41E4E611C2052D000739C7B /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D41E4E4F1C2052D000739C7B /* UIImageView+HighlightedWebCache.m */; };
 		D41E4E621C2052D000739C7B /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D41E4E511C2052D000739C7B /* UIImageView+WebCache.m */; };
 		D41E4E631C2052D000739C7B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D41E4E531C2052D000739C7B /* UIView+WebCacheOperation.m */; };
+		D425A6A31C36A2FA002F34D6 /* MDBPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D425A6A21C36A2FA002F34D6 /* MDBPhoto.m */; };
 		D429CCC51C33EADE0030B911 /* MDBStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D429CCC41C33EADE0030B911 /* MDBStatusCell.m */; };
 		D429CCC81C33FA6F0030B911 /* MDBStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = D429CCC71C33FA6F0030B911 /* MDBStatusFrame.m */; };
 		D433D4101C1EC55100045ACD /* mdbTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D433D40F1C1EC55100045ACD /* mdbTitleButton.m */; };
@@ -165,6 +166,8 @@
 		D41E4E511C2052D000739C7B /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		D41E4E521C2052D000739C7B /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		D41E4E531C2052D000739C7B /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		D425A6A11C36A2FA002F34D6 /* MDBPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBPhoto.h; sourceTree = "<group>"; };
+		D425A6A21C36A2FA002F34D6 /* MDBPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBPhoto.m; sourceTree = "<group>"; };
 		D429CCC31C33EADE0030B911 /* MDBStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBStatusCell.h; sourceTree = "<group>"; };
 		D429CCC41C33EADE0030B911 /* MDBStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBStatusCell.m; sourceTree = "<group>"; };
 		D429CCC61C33FA6F0030B911 /* MDBStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBStatusFrame.h; sourceTree = "<group>"; };
@@ -527,6 +530,8 @@
 				D4E493691C22A6860054C444 /* MDBStatus.m */,
 				D429CCC61C33FA6F0030B911 /* MDBStatusFrame.h */,
 				D429CCC71C33FA6F0030B911 /* MDBStatusFrame.m */,
+				D425A6A11C36A2FA002F34D6 /* MDBPhoto.h */,
+				D425A6A21C36A2FA002F34D6 /* MDBPhoto.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -955,6 +960,7 @@
 				D429CCC51C33EADE0030B911 /* MDBStatusCell.m in Sources */,
 				D4967A4C1C16B2EF00164B34 /* MBProgressHUD+NJ.m in Sources */,
 				D4CF42BE1C1DB7B400DBAF26 /* Foundation+Log.m in Sources */,
+				D425A6A31C36A2FA002F34D6 /* MDBPhoto.m in Sources */,
 				D41E4E621C2052D000739C7B /* UIImageView+WebCache.m in Sources */,
 				D4125C401C11896400820B89 /* AFURLResponseSerialization.m in Sources */,
 				D41E4E631C2052D000739C7B /* UIView+WebCacheOperation.m in Sources */,

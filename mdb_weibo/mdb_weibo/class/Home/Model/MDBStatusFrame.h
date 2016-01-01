@@ -8,7 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+//昵称字体
+#define IWStatusCellNameFont [UIFont systemFontOfSize:15]
+//时间字体
+#define IWStatusCellTimeFont [UIFont systemFontOfSize:12]
+
+//来源字体
+#define IWStatusCellSourceFont [UIFont systemFontOfSize:12]
+
+//正文字体
+#define IWStatusCellContentFont [UIFont systemFontOfSize:14]
 @class MDBStatus;
+
 @interface MDBStatusFrame : NSObject
 @property (nonatomic,strong) MDBStatus *status;
 

@@ -54,6 +54,7 @@
         //1.原创微博整体
         UIView *originalView = [[UIView alloc]init];
         [self.contentView addSubview:originalView];
+        originalView.backgroundColor = [UIColor redColor];
         self.originalView = originalView;
         
         UIImageView *iconView = [[UIImageView alloc]init];
@@ -64,21 +65,36 @@
         [originalView addSubview:photoView];
         self.photoView = photoView;
         
+        /*会员图标*/
         UIImageView *vipView = [[UIImageView alloc]init];
+        vipView.contentMode = UIViewContentModeCenter;
         [originalView addSubview:vipView];
         self.vipView = vipView;
         
+        /*昵称*/
         UILabel *nameLabel = [[UILabel alloc]init];
+        nameLabel.font = IWStatusCellNameFont;
         [originalView addSubview:nameLabel];
         self.nameLabel = nameLabel;
         
+        /** 时间图标 */
         UILabel *timeLabel = [[UILabel alloc]init];
+        timeLabel.font = IWStatusCellTimeFont;
         [originalView addSubview:timeLabel];
         self.timeLabel = timeLabel;
     
+        /*WEIBO正文*/
         UILabel *contentLabel = [[UILabel alloc]init];
+        contentLabel.font = IWStatusCellContentFont;
+        contentLabel.numberOfLines = 0;
         [originalView addSubview:contentLabel];
         self.contentLabel = contentLabel;
+        
+        /*Weibo来源*/
+        UILabel *sourceLabel = [[UILabel alloc]init];
+        sourceLabel.font = IWStatusCellSourceFont;
+        [originalView addSubview:sourceLabel];
+        self.sourceLabel = sourceLabel;
         
     }
     return self;
@@ -99,21 +115,34 @@
     
     /*会员图标*/
     self.vipView.frame = statusFrame.vipViewF;
-    self.vipView.image = [UIImage imageNamed:@"common_icon_membership_level1"];
+    if (user.isVip) {
+        self.vipView.hidden = NO;
+        
+        self.vipView.frame = statusFrame.vipViewF;
+        NSString *vipName = [NSString stringWithFormat:@"common_icon_membership_level%d",user.mbrank];
+        self.vipView.image = [UIImage imageNamed:vipName];
+        self.nameLabel.textColor = [UIColor orangeColor];
+    }else{
+        self.vipView.hidden = YES;
+        self.nameLabel.textColor = [UIColor blackColor];
+    }//cell里凡有YES必然有NO
     
     /*配图*/
     self.photoView.frame = statusFrame.photoViewF;
-    self.photoView.backgroundColor = [UIColor redColor];
+    self.photoView.backgroundColor = [UIColor blueColor];
     
     /*昵称*/
     self.nameLabel.text = user.name;
+//    self.nameLabel.font = IWStatusCellNameFont;
     self.nameLabel.frame = statusFrame.nameLabelF;
     
     /*时间*/
+    self.timeLabel.text = status.created_at;
     self.timeLabel.frame = statusFrame.timeLabelF;
     
     /*来源*/
     self.sourceLabel.frame = statusFrame.sourceLabelF;
+    self.sourceLabel.text = status.source;
     
     /*正文*/
     self.contentLabel.text = status.text;
