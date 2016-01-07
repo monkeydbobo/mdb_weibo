@@ -1,0 +1,33 @@
+//
+//  PrefixHeader.pch
+//  mdb_weibo
+//
+//  Created by wanghaobo on 15/11/7.
+//  Copyright © 2015年 wanghaobo. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+
+#define PrefixHeader_pch
+
+#endif /* PrefixHeader_pch */
+
+#ifndef DEBUG //开发阶段
+#define MDBLog(...) NSLog(_VA_ARGS__)
+#else //发布阶段
+#define MDBLog(...)
+#endif
+
+
+#ifdef __OBJC__
+
+    #import "UIView+Extension.h"
+    #import "UIBarButtonItem+Extension.h"
+    #import "UIWindow+Extension.h"
+    //RGB颜色
+    #define RGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+    //随机颜色
+    #define mdb_RandomColor RGBColor(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))
+
+#endif
